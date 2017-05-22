@@ -1,7 +1,7 @@
 # Codility Exercises
 
 ## Current Scores:
-- BinaryGap - 80%
+- BinaryGap - 100%
 - CyclicRotation - 100%
 - OddOcurrencesInArray - 100%
 - TapeEquilibrium - 50%
