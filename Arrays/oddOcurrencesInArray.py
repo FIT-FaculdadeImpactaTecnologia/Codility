@@ -1,16 +1,19 @@
 #!usr/bin/env python
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
+#
+from collections import defaultdict
 
-A = [9,3,9,3,9,7,9]
+inputsample = [9, 3, 9, 3, 9, 9, 7, 8, 9]
+inputsample.sort()
 
-def unpaired(A):
-    first = A[0]
-    if(len(A) > 1):
-        for x,item in enumerate(A):
-            if(first == item):
-                A.pop(x)
-        unpaired(A)
-    return A[0]
+sample_dict = defaultdict(list)
 
-print unpaired(A)
-    
+for pos, x in enumerate( inputsample ):
+    sample_dict[ str(x) ].append(pos)
+
+odd_occurrences = filter( lambda x : len( sample_dict[x] ) % 2 != 0, sample_dict  )
+
+if len( odd_occurrences ) > 1:
+    print odd_occurrences
+else:
+    print odd_occurrences[0]

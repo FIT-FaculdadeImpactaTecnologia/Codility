@@ -2,10 +2,10 @@
 
 ## Current Scores:
 - BinaryGap - 80%
-- CyclicRotation - 62%
-- OddOcurrencesInArray - 44%
+- CyclicRotation - 100%
+- OddOcurrencesInArray - 100%
 - TapeEquilibrium - 50%
-- FrogJmp - 44%
-- PermMissingElem - 30%
+- FrogJmp - 100%
+- PermMissingElem - 100%
 - PermCheck - 100%
 - MissingInteger 44%

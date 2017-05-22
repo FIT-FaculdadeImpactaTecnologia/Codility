@@ -1,20 +1,26 @@
 #!usr/bin/env python
-# -*- coding: utf-8 -*-
+#-*- coding: utf-8 -*-
+#
 
-#K = number of indexes
-
-A = [3, 8, 9, 7, 6]
+A = [1,2,3,4,5]
+K = 3
 
 def solution(A, K):
-    rotated_array = [None] * len(A)
-    iterator = 0
-    for item in A:
-        if(iterator > 0):
-            rotated_array[iterator] = A[-(K-iterator)]
-        else:
-            rotated_array[iterator] = A[-K]
-        iterator = iterator + 1
+    rotated = [None] * len(A)
 
-    return rotated_array
+    if len(A) == 1:
+        rotated = A
+    else:
+        for x, num in enumerate(A):
+            length = len(A) - 1
+            new_index = x + K
+            print "new_index: {} & num: {}".format(new_index, num)
 
-solution(A, 4)
+            if new_index > length:
+                new_index = (new_index) - (length + 1)
+
+            rotated[new_index] = num
+    
+    return  rotated
+
+print solution(A, K)

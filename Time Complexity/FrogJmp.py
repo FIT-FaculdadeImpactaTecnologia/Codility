@@ -1,14 +1,15 @@
-#!usr/bin/env python
-# -*- coding: utf-8 -*-
+##!usr/bin/env python
+#-*- coding: utf-8 -*-
+#
 
-count = 0
+X = 10
+Y = 85
+D = 30
+
 def solution(X, Y, D):
-    global count
-    if(D > 0):
-        if(X >= Y):
-            return count
-        else:
-            count = count + 1
-            return solution((X + D), Y, D)
+    jumps = (Y - X) / D
+    if (Y - X) % D > 0: 
+        jumps = jumps + 1
+    return jumps
 
-print solution(10, 85, 30)
+print solution(X, Y, D)
