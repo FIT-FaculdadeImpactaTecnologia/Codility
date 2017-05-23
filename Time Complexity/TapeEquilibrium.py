@@ -2,23 +2,21 @@
 # -*- coding: utf-8 -*-
 
 A = [3, 1, 2, 4, 3]
+
 def solution(A):
-    results = []
-    for x, item in enumerate(A):
-        smaller_sum = 0
-        greater_sum = 0
-        if(x > 0): 
-            for smaller in A[:x]:
-                smaller_sum = smaller_sum + smaller
-            for greater in A[x:]:
-                greater_sum = greater_sum + greater
-            final_sum = (greater_sum - smaller_sum)
+    static_value = A[0]
+    A = A[1:]
+    all_values_sum = sum(A)
+    results_array = []
 
-            if(final_sum < 0):
-                final_sum = final_sum * (-1)
+    for x, val in enumerate(A):    
+        final_value = ( static_value - all_values_sum ) * ( - 1 ) if ( static_value - all_values_sum ) < 0 else ( static_value - all_values_sum )
+        results_array.append(final_value)
+        static_value = static_value + val
+        all_values_sum = all_values_sum - val
 
-            results.append(final_sum)
+    results_array.sort()
 
-    return min(results)
+    return results_array[0]
 
 print solution(A)
